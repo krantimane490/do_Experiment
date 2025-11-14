@@ -75,6 +75,7 @@ class OTPService:
         )
         self._otp_store[user_id] = record
         print("generate otp")
+        print("hi pranav")
         return otp_code
     
     def verify_otp(self, user_id: str, otp_code: str) -> bool:
