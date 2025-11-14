@@ -74,7 +74,7 @@ class OTPService:
             attempts=0
         )
         self._otp_store[user_id] = record
-        
+        print("generate otp")
         return otp_code
     
     def verify_otp(self, user_id: str, otp_code: str) -> bool:
