@@ -6,7 +6,7 @@ from models import (
 )
 
 app = Flask(__name__)
-app.secret_key = "weaksecret"  # 🔥 Vulnerability: Weak secret key
+app.secret_key = "weaksecret"  
 
 init_db()
 create_sample_blogs()  # Auto seed data (dependency)
@@ -54,7 +54,7 @@ def add_blog_page():
     return render_template("add_blog.html")
 
 
-# 🔥 Vulnerable Admin Page (No Authentication)
+
 @app.route("/admin")
 def admin():
     return render_template("admin.html")
