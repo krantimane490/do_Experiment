@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+    <h3>Add New Blog</h3>
+    <form method="POST">
+        <input class="form-control mb-2" name="title" placeholder="Blog Title" required>
+        <textarea class="form-control mb-2" name="content" rows="5" placeholder="Blog Content" required></textarea>
+        <button class="btn btn-success w-100">Publish</button>
+    </form>
+</div>
+
+{% endblock %}

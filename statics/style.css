@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+}
+
+nav {
+    background: #333;
+    padding: 10px;
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.container {
+    width: 60%;
+    margin: 20px auto;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+}
+
+button {
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
