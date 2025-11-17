@@ -33,7 +33,7 @@ def login():
         if user:
             session["user"] = request.form["username"]
             return redirect("/")
-        return "Login Failed! (Try SQL injection 👀)"
+        return "Login Failed  oo my god.!!! (Try SQL injection 👀)"
 
     return render_template("login.html")
 
