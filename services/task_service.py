@@ -8,6 +8,7 @@ class TaskService:
 
     def create_task(self, title, description, due_date=None):
         print(f"Attempting to create task: {title}")
+        print("hi don't create task for me")
         validate_title(title)
 
         if due_date:
