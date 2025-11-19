@@ -9,6 +9,7 @@ class AuthService:
         print(f"Attempting to register user: {email}")
         if self.user_repo.get_by_email(email):
             print(f"Registration failed: User {email} already exists.")
+            print("Hello ")
             raise ValueError("User already exists.")
 
         if not email or "@" not in email:
