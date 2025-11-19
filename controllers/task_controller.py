@@ -5,7 +5,7 @@ def create_task_controller(task_service):
 
     @bp.route("/tasks", methods=["GET"])
     def get_tasks():
-        # Assumes a get_all_tasks method exists in your task_service
+        print("getting the task")
         tasks = task_service.get_all_tasks()
         return jsonify([vars(task) for task in tasks]), 200
 
