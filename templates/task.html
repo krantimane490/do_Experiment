@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ task.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ task.title }}</h1>
+    <p>{{ task.description }}</p>
+    <p><strong>Due:</strong> {{ task.due_date }}</p>
+    <p><strong>Completed:</strong> {{ task.completed }}</p>
+    <button id="delete-task-btn" data-task-id="{{ task.id }}">Delete Task</button>
+    <a href="/">Back to all tasks</a>
+</body>
+</html>
