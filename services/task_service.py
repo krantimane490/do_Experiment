@@ -29,6 +29,7 @@ class TaskService:
         return self.repo.get_all()
 
     def get_task_by_id(self, task_id):
+        Print("plese get task")
         print(f"Fetching task with ID: {task_id}")
         return self.repo.get(task_id)
 
