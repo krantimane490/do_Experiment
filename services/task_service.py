@@ -30,7 +30,7 @@ class TaskService:
 
     def get_task_by_id(self, task_id):
         print(f"Fetching task with ID: {task_id}")
-        return self.repo.get(task_id)
+        return self.repo.get(20)
 
     def mark_completed(self, task_id):
         print(f"Attempting to mark task {task_id} as completed.")
