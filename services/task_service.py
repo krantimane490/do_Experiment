@@ -24,38 +24,6 @@ class TaskService:
         print(f"Task '{title}' created successfully with ID: {new_task.id}")
         return new_task
 
-    def update_task(self, task_id, title=None, description=None, due_date=None):
-        """Update an existing task with new values"""
-        print(f"Attempting to update task {task_id}")
-        task = self.repo.get(task_id)
-        if not task:
-            print(f"Update failed: Task {task_id} not found.")
-            raise KeyError("Task not found.")
-
-        # Update title if provided
-        if title is not None:
-            validate_title(title)
-            task.title = title
-
-        # Update description if provided
-        if description is not None:
-            task.description = description
-
-        # Update due_date if provided
-        if due_date is not None:
-            if due_date == "":
-                task.due_date = None
-            else:
-                try:
-                    task.due_date = datetime.fromisoformat(due_date)
-                except:
-                    print(f"Task update failed for task {task_id}: Invalid date format.")
-                    raise ValueError("Invalid date format.")
-
-        self.repo.update(task)
-        print(f"Task {task_id} updated successfully.")
-        return task
-
     def get_all_tasks(self):
         print("Fetching all tasks.")
         return self.repo.get_all()

@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, render_template
-from flask_cors import CORS
 from repositories.task_repository import TaskRepository
 from repositories.user_repository import UserRepository
 from services.task_service import TaskService
@@ -10,9 +9,6 @@ from controllers.auth_controller import create_auth_controller
 
 def create_app():
     app = Flask(__name__)
-    
-    # Enable CORS for all routes
-    CORS(app)
 
     # Repositories
     task_repo = TaskRepository()
@@ -34,15 +30,6 @@ def create_app():
     @app.route("/")
     def index():
         return render_template("index.html")
-    
-    # Error handlers
-    @app.errorhandler(404)
-    def not_found(e):
-        return jsonify({"error": "Not found"}), 404
-
-    @app.errorhandler(500)
-    def internal_error(e):
-        return jsonify({"error": "Internal server error"}), 500
 
     return app
 

@@ -26,23 +26,6 @@ def create_task_controller(task_service):
         )
         return jsonify(vars(task)), 201
 
-    @bp.route("/tasks/<int:task_id>", methods=["PUT"])
-    def update_task(task_id):
-        """Update an existing task"""
-        data = request.json
-        try:
-            task = task_service.update_task(
-                task_id,
-                data.get("title"),
-                data.get("description"),
-                data.get("due_date")
-            )
-            return jsonify(vars(task)), 200
-        except KeyError as e:
-            return jsonify({"message": str(e)}), 404
-        except ValueError as e:
-            return jsonify({"message": str(e)}), 400
-
     @bp.route("/tasks/<int:task_id>", methods=["DELETE"])
     def delete_task(task_id):
         try:
